@@ -14,10 +14,30 @@
   "devDependencies": {
     "@types/node": "^12.0.3",
     "@types/node-telegram-bot-api": "^0.31.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
     "dotenv": "^8.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
     "nodemon": "^1.19.1",
+    "prettier": "^1.17.1",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ]
   },
   "nodemonConfig": {
     "ignore": [

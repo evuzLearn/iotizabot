@@ -17,7 +17,7 @@ const domainContainer = new DepInjection(
   },
 );
 
-const useCases = {
+export const useCases = {
   iotaPrice: domainContainer.get<IotaPriceUseCase>(Inject.IotaPriceUseCase),
 };
 

@@ -26,11 +26,9 @@ export class BitfinexRepository extends CurrencyRepository {
   async getIotaPrice(): Promise<Currency> {
     const iotaPrice = this.getPrice('iota');
     if (iotaPrice) {
-      console.log('CACHE');
       return Promise.resolve(iotaPrice);
     }
 
-    console.log('NO CACHE');
     const { body } = await this.http.get(`${URL}trades/tIOTUSD/hist?limit=1`, { json: true });
     const currency = this.setPrice('iota', { price: body[0][3], timestamp: body[0][1] });
     return currency;

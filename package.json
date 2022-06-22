@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "depsin": "^1.2.0",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "node-telegram-bot-api": "^0.30.0",
     "ts-domain": "^1.4.1"
   },
